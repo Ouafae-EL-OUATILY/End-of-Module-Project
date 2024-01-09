@@ -1,0 +1,29 @@
+<!-- questions.component.html -->
+<p-menubar [model]="menuItems" [style.direction]="'rtl'" class="fixed-menubar"></p-menubar>
+
+<div class="slide-over">
+  <div class="image-container">
+    <img src="./assets/image1.png" alt="Image Description">
+  </div>
+  <div class="title">
+    <h2>اختبار التربية الإسلامية</h2>
+    <h3>يرجى الإجابة على الأسئلة باللغة العربية وبطريقتك الخاصة</h3>
+  </div>
+</div>
+<div class="center-container">
+<div class="question-container">
+  <div class="question">
+    {{ currentQuestionIndex+1+". "+questions[currentQuestionIndex] }}
+  </div>
+  <input type="text" [(ngModel)]="answers[currentQuestionIndex]" class="answer" placeholder="أجب على السؤال بأسلوبك">
+</div>
+
+<div class="button-container">
+  <button (click)="nextQuestion()" [ngClass]="{'last-question-button': currentQuestionIndex === questions.length - 1}">
+    {{ currentQuestionIndex < questions.length - 1 ? 'السؤال التالي' : 'الحصول على نتيجة الإختبار' }}
+  </button>
+</div>
+
+
+
+</div>

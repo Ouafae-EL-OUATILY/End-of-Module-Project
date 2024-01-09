@@ -1,0 +1,7 @@
+version: '3'
+services:
+  angular-app:
+    image: ouafae1004/angular-app
+    ports:
+      - "80:80"
+

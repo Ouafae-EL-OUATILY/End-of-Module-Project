@@ -1,0 +1,10 @@
+Flask
+Flask-CORS
+openai
+python-dotenv
+numpy
+joblib
+Keras
+tensorflow-gpu
+tensorflow
+

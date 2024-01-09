@@ -1,0 +1,20 @@
+<!-- result.component.html -->
+<p-menubar [model]="menuItems" [style.direction]="'rtl'" class="fixed-menubar"></p-menubar>
+
+<div class="slide-over">
+    <div class="image-container">
+        <img src="./assets/image1.png" alt="Image Description">
+    </div>
+    <div class="title" style="font-size: 25px;">
+        <h2>نتائج الاختبار</h2>
+        <h3 class="text">المجموع الكلي: {{ totalGrade }}/20</h3>
+    </div>
+    <button style="background-color:  #d1ae0f;color: #0e5344; transform: translateY(480%); padding: 8px 20px;border: none;cursor: pointer;border-radius: 10px;"><i class="pi pi-replay" (click)="redirectToQuestionPage()" style="font-weight: bold;font-size: 25px;">أعد الاختبار</i></button>
+</div>
+
+<div class="question-container" *ngFor="let question of questions; let i = index" #scrollContainer>
+    <div class="question">
+        {{ i+1+". "+question }}
+    </div>
+    <p-messages [value]="messages[i]"></p-messages>
+</div>
